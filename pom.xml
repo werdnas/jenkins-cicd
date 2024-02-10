@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.techspeaks</groupId>
-	<artifactId>student-kubernetes-demo</artifactId>
+	<artifactId>jenkins-cicd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jenkins-cicd</name>
 	<description>Demo project for Spring Boot Kubernetes deployment</description>
