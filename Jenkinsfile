@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Execute Maven') {
            steps {
-                bat 'mvn clean install'             
+                sh 'mvn clean install'             
           }
     }
     stage('Build image') {
@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Deploying spring container to Kubernetes') {
       steps {
-      	bat 'kubectl apply -f deployment.yaml'
+      	sh 'kubectl apply -f deployment.yaml'
         //script {
           //kubernetesDeploy(configs: "deployment.yaml" ,kubeconfigId: "MINIKUBECONFIG")          
         //}
