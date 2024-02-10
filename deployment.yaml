@@ -1,8 +1,10 @@
 
+
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
   name: spring-boot-cicd
+  namespace: devops-tools
 spec:
   selector:
     app: spring-boot-cicd
@@ -16,6 +18,7 @@ apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
   name: spring-boot-cicd
+  namespace: devops-tools
 spec:
   selector:
     matchLabels:
@@ -26,6 +29,7 @@ spec:
       labels:
         app: spring-boot-cicd
     spec:
+      serviceAccountName: jenkins-admin
       containers:
         - name: spring-boot-cicd
           image: andrews/spring-boot-cicd:latest # Image that will be used inside the container in the cluster
